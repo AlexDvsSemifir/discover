@@ -4,13 +4,17 @@ on:
   issues:
     types:
       [opened, edited, deleted, closed, reopened, labeled, unlabeled, assigned]
+    secrets:
+      ado_token: ${{ secrets.ADO_PERSONAL_ACCESS_TOKEN }}
+      github_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
 
 jobs:
   Sync-with-Azure-DevOps:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        env:
+      - uses: AlexDvsSemifir/discover/.github/workflows@master
+        with:
           ado_token: ${{ secrets.ADO_PERSONAL_ACCESS_TOKEN }}
           github_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
           ado_organization: "Discoveriio"
@@ -21,5 +25,3 @@ jobs:
           ado_close_state: "Closed"
           ado_bypassrules: true
           log_level: 100
-      - uses: AlexDvsSemifir/discover/.github/workflows@master
-
