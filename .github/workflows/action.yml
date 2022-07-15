@@ -12,6 +12,7 @@ jobs:
       - uses: AlexDvsSemifir/discover@master
         env:
           ado_token: "${{ secrets.ADO_PERSONAL_ACCESS_TOKEN }}"
+          github_token: "${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}"
           ado_organization: "Discoveriio"
           ado_project: "Discover.io"
           ado_wit: "User Story"
