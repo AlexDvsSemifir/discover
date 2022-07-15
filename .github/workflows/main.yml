@@ -9,7 +9,7 @@ jobs:
   Sync-with-Azure-DevOps:
     runs-on: ubuntu-latest
     steps:
-      - uses: AlexDvsSemifir/discover@master
+      - uses: AlexDvsSemifir/discover/.github/workflows/main@master
         env:
           ado_token: "${{ secrets.ADO_PERSONAL_ACCESS_TOKEN }}"
           ado_organization: "Discoveriio"
