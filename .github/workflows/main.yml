@@ -7,7 +7,7 @@ on:
 
 jobs:
   Sync-with-Azure-DevOps:
-    runs-on: ubuntu:latest
+    runs-on: ubuntu
     steps:
       - uses: AlexDvsSemifir/discover@master
         env:
